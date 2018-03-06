@@ -1,0 +1,11 @@
+!Initialization options for Pythia
+!Print:quiet = on	!dont print stuff
+Beams:idB = 2212	!collide protons
+Beams:eCM = 2760.	!sqrt(s)
+SoftQCD:all = off	!non-diffractive processes
+HardQCD:all = on	!hard processes
+HadronLevel:all = off	!stop before hadronization
+PartonLevel:ISR = on	!include ISR
+PartonLevel:MPI = off	!no multi-particle interactions
+TimeShower:pTmin = 1.	!minimum pT needed to split
+Random:setSeed= on	!use random seed
