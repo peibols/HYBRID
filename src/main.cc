@@ -94,7 +94,9 @@ int main(int argc, char** argv)
 	Info& info = pythia.info;
 
 	//Read cmnd file
-        pythia.readFile("setup_pythia.cmnd");
+	ostringstream pythiaset;
+	pythiaset << "setup_pythia_" << pdf << "_" << system << ".cmnd";
+        pythia.readFile(pythiaset.str());
 
 	//Set PDF
 	std::string pdfSet = "LHAPDF5:cteq6ll.LHpdf";
@@ -277,7 +279,7 @@ int main(int argc, char** argv)
 			//Generate x,y
 			double x,y;
 			gxy(x, y, nr);
-			cout << " xcre= " << x << " ycre= " << y << endl;
+			//cout << " xcre= " << x << " ycre= " << y << endl;
 			//Print creation point, and four momentum of hs partons in Source file
 			ofstream source_file;
 	        	sprintf(Sfile,"../results_%s/%s/source/SOURCE%i_%s.dat",system.c_str(),cent.c_str(),count,pdf.c_str());	//NOT USING IT NOW
@@ -335,7 +337,7 @@ int main(int argc, char** argv)
 			vector<Hadron> vhadrons, qhadrons;
 			if (totcount==0 && count==0) init_lund();
 			do_lund(partons,quenched,vhadrons,qhadrons);
-			cout << " Vac Hadron size= " << vhadrons.size() << " Med Hadron size= " << qhadrons.size() << endl;
+			//cout << " Vac Hadron size= " << vhadrons.size() << " Med Hadron size= " << qhadrons.size() << endl;
 
 			//Extract weight and cross section of the event
 			double weight=info.weight();

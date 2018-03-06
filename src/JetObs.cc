@@ -185,12 +185,12 @@ void jet_obs (vector<Parton> partons, vector<Quench> quenched, vector<Hadron> vh
 	//HISTOS
 	//Print on file every time
 	ostringstream odir;
-	odir << "../" << part_or_had.c_str() << "_results_" << system.c_str() << "/" << cent.c_str() << "/" << pdf.c_str() << "_T" << tmethod << "A" << int(100.*alpha);
+	odir << "../results_" << system.c_str() << "/" << cent.c_str() << "/" << part_or_had.c_str() << "_" << pdf.c_str() << "_tmethod_" << tmethod << "_alpha_" << int(100.*alpha);
 	ostringstream pRaaF, RaaF, AcoF;
 	
 	//Hadron or Parton RAA
 	ofstream pRAA;
-        pRaaF << odir.str().c_str() << "particle_RAA_.dat";
+        pRaaF << odir.str().c_str() << "particle_RAA.dat";
         pRAA.open (pRaaF.str().c_str());
 	for (unsigned a=0; a<31; a++) {
 		double praaerr=0.;

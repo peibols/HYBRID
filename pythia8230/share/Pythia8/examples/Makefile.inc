@@ -1,5 +1,5 @@
 # PYTHIA configuration file.
-# Generated on Tue Mar 6 16:58:27 EST 2018 with the user supplied options:
+# Generated on Tue Mar 6 17:19:12 EST 2018 with the user supplied options:
 # --with-lhapdf5=/gs/project/cqn-654-ad/peibols/lhapdf_pythia/
 
 # Install directory prefixes.
